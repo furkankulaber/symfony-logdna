@@ -2,6 +2,7 @@
   "name": "furkankulaber/symfony-logdna",
   "type": "symfony-bundle",
   "description": "Integrates LogDna with Symfony",
+  "minimum-stability": "dev",
   "keywords": [
     "symfony",
     "symfony2",
