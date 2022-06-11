@@ -18,11 +18,19 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('log_dna');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode = \method_exists(TreeBuilder::class, 'getRootNode')
+            ? $treeBuilder->getRootNode()
+            : $treeBuilder->root('log_dna');
+
+
+        $rootNode
+            ->children()
+            ->scalarNode('api_key');
+
+        $rootNode
+            ->children()
+            ->scalarNode('hostname');
 
         return $treeBuilder;
     }

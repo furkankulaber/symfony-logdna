@@ -24,5 +24,12 @@ class LogDnaExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $definition = $container->getDefinition('furkankulaber.logdna.handler');
+
+        $definition->addArgument($config['api_key']);
+        $definition->addArgument($config['hostname']);
     }
+
+
 }

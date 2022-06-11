@@ -1,0 +1,4 @@
+services:
+    furkankulaber.logdna.handler:
+        class: furkankulaber\LogDnaBundle\Handler\LogDnaHandler
+        autowire: true
